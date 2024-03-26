@@ -1,0 +1,97 @@
+body {
+    overflow: hidden;
+    background-image: url("registration.png");
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: darkgray;
+  }
+  
+  h1 {
+    font-size: 70px;
+    color: #f3efef;
+    text-align: center;
+    margin-top: 200px;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .gray-bg {
+    background-color: #f8f9fa;
+  }
+  
+  .button_to_url {
+    background-color: rgba(216, 211, 211, 0.578);
+    color: rgb(246, 243, 243);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+
+  }
+    .button_to_url:hover,
+    .button_to_url:active {
+        text-decoration: none; 
+        color: rgb(114, 113, 117);
+        background-color: #ffffff6d;
+    }
+  .bottom-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: rgba(118, 117, 117, 0.821);
+    z-index: -1; /* Змінили z-index */
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 115px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.button {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 100;
+    font-family: Arial, sans-serif;
+}
+.button:hover,
+.button:active {
+    text-decoration: none; 
+    color: rgb(251, 250, 255);
+}
+
+.logout-button {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    padding: 10px 40px;
+    color: rgb(156, 155, 159);
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.logout-button:hover,
+.logout-button:active {
+    background-color: #ffffff;
+    text-decoration: none; 
+    color: rgb(156, 155, 159);
+}
+  

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='post.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Post</title>
+</head>
+<body>
+
+    <a href="{{ url_for('account') }}" class="logout-button">Account</a>
+    <div class="overlay"></div>
+    <div class="center">
+        <a href="{{ url_for('home') }}" class="button4" style="font-size: 3vh;">LvivAssistHub</a>
+        <h1>Add Post</h1>
+        <form action="/add_post" method="post">
+            <div class="employee-info">
+                <label for="description">Short description:</label>
+                <input type="text" id="description" name="description" required><br><br>
+
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" required><br><br>
+            
+                <label for="hashtag" placeholder="Choose hashtag">Hashtag:</label>
+                <div class="dropdown">
+                    <input id="hashtag" name="hashtag" list="post_dropdown" placeholder="Choose hashtag"><br><br>
+                    <datalist id="post_dropdown">
+                        {% for hash in ['VentilationCleaners', 'PlumbingTechnicians', 'FurnitureRepair', 'SecuritySystem', 'Electricians', 'WindowDoorReplacement', 'Landscape', 'HeatingSystem', 'Cleaning', 'RoofRepair'] %}
+                            <option value="{{ hash }}">{{ hash }}</option>
+                        {% endfor %}
+                        {% for hashtag in hashtags %}
+                            {% if hashtag is not none %}
+                                <option>{{ hashtag[0].upper() + hashtag[1:] }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </datalist>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

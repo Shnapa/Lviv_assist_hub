@@ -1,0 +1,166 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("registration.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh; /* Зменшена висота сторінки */
+    margin-top: 5rem;
+    overflow: hidden; /* Вимкнення прокрутки сторінки */
+}
+  
+
+  .custom-section-class{
+    background-attachment:fixed;
+    background-size:cover;
+  }
+
+  .background-container {
+    background-image: url("tiles.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Set a fixed height for the background container */
+    overflow-y: hidden; /* Enable vertical scrolling for the background container */
+    position: fixed;
+    width: 100%; /* Take the full width of the viewport */
+    z-index: -1; /* Send the background container to the back */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+  }
+  
+  .bg-steel {
+    background-color: #f1f1f1ab;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: hsl(0, 0%, 24%);
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: 100;
+  }
+  /* registration-style.css */
+
+    .container {
+        max-width: 800px; /* Adjust the max-width as needed to make the frame wider */
+        margin: 10px; /* Adjust the margin for the top and bottom, and set auto for left and right */
+        padding: 20px;
+    }
+
+    .content-section {
+        background: #f4f1f159;
+        color: #ffffff;
+        padding: 20px;
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .btn-register {
+        background-color: #6d8183; /* Bootstrap's primary color */
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .btn-register:hover {
+        background-color: #5f5e5e; /* Darker shade on hover */
+    }
+
+    .btn-outline-info {
+        background-color: white; /* Specify your desired color code */
+        color: #ffffff;
+    }
+
+    input[type=radio], input[type=checkbox]{
+        transform: scale(2);
+        margin-right: 2em
+    }
+    .bottom-overlay {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        background-color: rgba(118, 117, 117, 0.821);
+        z-index: -1; /* Змінили z-index */
+    }
+    .transparent-rectangle {
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 5px 13px;
+        transition: background-color 0.3s;
+    }
+    
+    /* Стилі для зміни фону кнопки при наведенні */
+    .transparent-rectangle:hover {
+        background-color: rgba(255, 255, 255, 0.662);
+        color: #333; /* змініть колір тексту на потрібний */
+    }
+
+
+    .text-link {
+        color:rgb(63, 53, 53); /* синій колір, який буде застосований до посилань */
+        transition: color 0.3s;
+    }
+    
+    .text-link:hover {
+        color: rgb(244, 241, 241); /* змінений колір тексту при наведенні */
+    }
+
+
+/* Стилі для зміни коліру тексту кнопки "Log In" */
+.custom-text-color {
+    color: rgb(63, 53, 53) !important; /* білий колір тексту */
+    transition: color 0.3s;
+}
+.custom-text-color:hover {
+    color: #fff !important; /* змінений колір тексту при наведенні на білий */
+}
+.bottom-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: rgba(118, 117, 117, 0.821);
+    z-index: 1; /* Змінили z-index */
+}
+
+.text-muted a {
+    color: white !important; /* колір тексту білий */
+    text-decoration: none !important; /* відключення підкреслення */
+    z-index: 999;
+}
+
+.text-muted a:hover {
+    color: white !important; /* колір тексту білий при наведенні */
+    text-decoration: none !important; /* відключення підкреслення при наведенні */
+}
+
+.custom-color {
+    color: rgb(0, 0, 0);
+    z-index: 999;
+}
+
+.custom-color a {
+    color: white !important; /* колір тексту білий */
+}
+
+.custom-color a:hover {
+    color: rgb(63, 53, 53)!important; /* колір тексту чорний при наведенні */
+}
+
+

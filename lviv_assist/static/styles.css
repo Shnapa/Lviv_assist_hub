@@ -1,0 +1,177 @@
+body {
+    background-image: url("background5.png");
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 115px; 
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+.button4 {
+    position: absolute;
+    top: 40px; 
+    left: 20px;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: 100;
+    font-family: Arial, sans-serif; 
+}
+.logout-button {
+    position: absolute;
+    top: 40px; /* Відступ від верхнього краю */
+    right: 80px; /* Відступ від лівого краю */
+    padding: 10px 40px;
+    color: rgb(156, 155, 159); /* Колір тексту */
+    text-decoration: none; /* Забрати підкреслення */
+    border: 2px solid white; /* Біла окантовка */
+    border-radius: 10px; /* Мʼякі кути */
+    background-color: rgba(255, 255, 255, 0.2); /* Прозорий фон */
+    cursor: pointer;
+    font-size: 19px; /* Розмір шрифту */ /* Жирний шрифт */
+    font-family: Arial, sans-serif; /* Сімейство шрифтів */
+}
+.logout-button:hover {
+    background-color: rgba(251, 251, 251, 0.691);
+}
+.logout-button1 {
+    position: absolute;
+    top: 40px; /* Відступ від верхнього краю */
+    left: 230px; /* Відступ від лівого краю */
+    padding: 10px 40px;
+    color: rgb(156, 155, 159); /* Колір тексту */
+    text-decoration: none; /* Забрати підкреслення */
+    border: 2px solid white; /* Біла окантовка */
+    border-radius: 10px; /* Мʼякі кути */
+    background-color: rgba(255, 255, 255, 0.2); /* Прозорий фон */
+    cursor: pointer;
+    font-size: 19px; /* Розмір шрифту */ /* Жирний шрифт */
+    font-family: Arial, sans-serif; /* Сімейство шрифтів */
+}
+.logout-button1:hover {
+    background-color: rgba(251, 251, 251, 0.691);
+}
+  h1 {
+    color: #f4f4f4;
+    margin-top: 200px;
+    font-size: 140px;
+    margin-left: 100px;
+  }
+
+  .button {
+    font-size: 20px;
+    display: inline-block;
+    height: 100px;
+    width: 400px;
+    color: #d2cfcf;
+    background-color: #ffffff00;
+    border-color: #d2cfcf;
+    border: 2px solid rgb(244, 244, 244);
+    border-radius: 40px;
+    margin: 5px;
+  }
+
+  .button:hover {
+    background-color: #ffffff; /* Change this to the desired color */
+    /* You can also add other styles for the hover state if needed */
+}
+  .button:active {
+    background-color: #ffffff; /* Change this to the desired color */
+    /* You can also add other styles for the active state if needed */
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #17141d;
+    color: white;
+}
+
+.card-list{
+    display: flex;
+    padding: 3rem;
+    overflow-x: scroll;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+    margin-top: 690px;
+    margin-left: 30px;
+}
+
+.card-list::-webkit-scrollbar {
+    width: 100px;
+    height: 17px;
+}
+.card-list::-webkit-scrollbar-thumb {
+    background: #201c29;
+    border-radius: 10px;
+}
+
+.card-list::-webkit-scrollbar-track {
+    background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
+}
+.card{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 430px;
+    min-width: 250px;
+    height: 380px;
+    padding: 1.5rem;
+
+    border-radius: 16px;
+    background: #cfc9c9;
+    box-shadow: -1rem 0 3rem rgba(255, 255, 255, 0.316);
+    color: white;
+
+    transition: .2s;
+}
+
+.card:hover{
+    transform: translateY(-1rem);
+}
+
+.card:hover~.card{
+    transform: translateX(130px);
+}
+
+.card:not(:first-child){
+    margin-left: -130px;
+}
+
+.card-list .card .card-header .author-avatar {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin-top: 16px;
+    margin-left: 30px;
+}
+
+.author-name-prefix{
+    font-style: normal;
+    font-weight: 500;
+    color: #7a7a8c;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-details {
+    margin-top: 16px;
+    margin-right: 30px;
+}
+.comment h3{
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+}
+.author-details h4,
+.author-details h5 {
+    font-family: Arial, sans-serif;
+}

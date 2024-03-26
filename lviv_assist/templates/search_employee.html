@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='employees.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='light_other.css') }}">
+</head>
+<body>
+<main>
+  <div class="button-container">
+      <input class="l" type="checkbox" id="light-toggle">
+      <label for="light-toggle"></label>
+      <div class="light-bulb"></div>
+  </div>
+</main>
+<h1>Employee Information</h1>
+
+
+<div class="overlay"></div>
+<a href="{{ url_for('home') }}" class="button">LvivAssistHub</a>
+<a href="{{ url_for('logout') }}" class="logout-button">Log out</a>
+
+
+
+<div class="container">
+  <div class="row">
+    {% for employee in employees %}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body gray-bg">
+          <h5 class="card-title">{{ employee.name }} {{ employee.surname }}</h5>
+          <h6>{{ employee.email }}</h6>
+          <p>{{ employee.description[:200] + '...' if employee.description|length > 200 else employee.description }}</p>
+          <p>{{ employee.price[:200] + '...' if employee.price|length > 200 else employee.price }}</p>
+          <a href="{{ url_for('profile', email=employee.email, description=employee.description, comment=None) }}" class="button_to_url">View Details</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</body>
+<script>
+  const lightBulb = document.querySelector('.light-bulb');
+  const lightToggle = document.getElementById('light-toggle');
+  const body = document.body;
+  const logoutButton = document.querySelector('.logout-button');
+  const savedState = localStorage.getItem('lightState');
+
+  
+  lightToggle.checked = savedState === 'on';
+  body.style.backgroundImage = "url('/static/registration.png')";
+  if (lightToggle.checked) {
+      body.style.background = "url('/static/registration_dark.png')";
+  }
+  lightToggle.addEventListener('change', function() {
+      localStorage.setItem('lightState', this.checked ? 'on' : 'off');
+      if (this.checked) {
+          lightBulb.classList.add('light-on');
+          body.style.background = "url('/static/registration_dark.png')";
+      } else {
+          lightBulb.classList.remove('light-on');
+          body.style.backgroundImage = "url('/static/registration.png')";
+      }
+  });
+</script>
+</html>

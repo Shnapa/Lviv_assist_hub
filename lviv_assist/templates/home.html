@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LvivAssistHub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='light_other.css') }}">
+    <style>
+        .title {
+    font-size: 14vh;
+    color: white;
+    font-weight: normal;
+    position: absolute;
+    left: 26%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 1300px;
+    overflow-y: scroll;
+}
+
+.section:first-child {
+height: 97vh;
+overflow-y: hidden;
+}
+
+.section:nth-child(even) {
+position: absolute;
+top: 70vh;
+left: 0;
+width: 100vw;
+height: 30vh;
+background-color: #A09393;
+z-index: 999;
+}
+p {
+    font-family: Arial, sans-serif;
+    font-size: 80px;
+    color: white;
+    font-weight: normal;
+    padding-top: 60px;
+    padding-left: 40px;
+    margin: 0;
+    line-height: 0.000002;
+}
+.quarter-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 15vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    padding: 3%;
+}
+
+.button {
+    position: fixed;
+    top: 680px;
+    left: 70px;
+}
+*, *:before, *:after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    :root {
+        minFontSize + (maxFontSize - minFontSize) * (100vw - minVWidth)/(maxVWidth - minVWidth)
+        font-size: calc(64px + (80 - 64) * (100vw - 320px)/(960 - 320));
+    }
+    body, input {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+    input {
+        display: block;
+        margin-bottom: 1.5em;
+    }
+    main {
+        padding: 1.5em 0 0 0;
+        text-align: center;    
+    }
+    .email-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 999;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* Styles for close button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <input class="l" type="checkbox" id="light-toggle">
+    <label for="light-toggle"></label>
+    <div class="light-bulb"></div>
+    <div>
+    <div class="section">
+        <div class="title">LvivAssistHub</div>
+        <div class="overlay"></div>
+        <a class="button4" style="font-size: 25px;">LvivAssistHub</a>
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('account') }}" class="logout-button" style="right: 140px;padding: 10px 20px;">Account</a>
+        <a href="{{ url_for('logout') }}" class="logout-button" style="right: 15px; padding: 10px 20px;">Log out</a>
+        {% else %}
+            <a href="{{ url_for('register') }}" class="logout-button" style="right: 120px;padding: 10px 20px;">Sign Up</a>
+            <a href="{{ url_for('login') }}" class="logout-button" style="right: 15px; padding: 10px 20px;">Log In</a>
+        {% endif %}
+        <a href="{{ url_for('employee_search') }}" class="logout-button1">Search</a>
+        <a href="{{ url_for('employee_search') }}" class="logout-button1" style="left: 75px; margin-top: 39%; padding: 10px 40px;
+        color: white;font-size: 15px;padding: 20px 100px;position: absolute;
+        border: 2px solid white;
+        border-radius: 20px;
+
+        font-size: 25px;
+        font-weight: 100;
+        font-family: Arial, sans-serif;">Search for service</a>
+        </div>
+    </div>
+
+    <div class="section" style="background-color: #A09393; width: 100vw; display: flex; flex-direction: column; justify-content: flex-end; position: absolute;">        
+        <div style="flex: 1;"></div>
+        <img src="/static/lviv1.JPG"  style="width: 700px; height: 300px;top: 70px ;position: absolute; left: 9%;border: 2px solid white;border-radius: 10px">
+        <div style="position: absolute; top: 70px; left: 51%; width: 700px; height: 300px; background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; border: 2px solid white;"></div>
+        <div style="position: absolute; top: 35px; left: 55%; padding:50px; color: white; font-family: Arial, sans-serif; font-size: 25px; display: flex; flex-direction: column; width: 600px; text-align: right; justify-content: flex-start;">
+            <span>Welcome to our service platform, where we help you find qualified workers for those in need of repairs, maintenance and other services. Our goal is to simplify the process of finding reliable workers and ensure that your service needs are met efficiently and professionally.</span>
+        </div>
+        
+        <img src="/static/lviv2.JPG"  style="width: 700px; height: 300px;top: 400px ;position: absolute; right: 8%;border: 2px solid white;border-radius: 10px">
+        <div style="position: absolute; top: 400px; right: 50%; width: 700px; height: 300px; background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; border: 2px solid white;"></div>
+        <div style="padding: 50px; color: white; font-family: Arial, sans-serif; font-size: 25px; display: flex; flex-direction: column; width: 500px; text-align: left; justify-content: flex-start; margin-left: -50%; position: relative; top: -590px;">
+            <span>Whether you are looking for a plumber, electrician or any other service provider, we are here to help you find the right professional. Join us today and experience how easy it is to find quality services.</span>
+        </div>
+        
+        
+
+        <div class="quarter-bar">
+            
+            <p style="position: absolute; bottom: 30%; right: 44%; font-family: Arial, sans-serif; font-size: 19px; color: rgba(63, 53, 53, 0.785); line-height: 1.5;">
+                +38(097) 298 67 596 <br>     
+                +38(063) 436 56 590    
+            </p>
+        </div>
+        
+    </div>
+
+    <section class="card-list" style="background-color: #A09393">
+        <article class="card">
+            <header class="card-header">
+                <img src="/static/ivan_volkov.jpg" class="author-avatar" alt="Ivan Volkov">
+                <div class="author-details">
+                    <h4>Ivan Volkov</h4>
+                    <h4>Plumber</h4>
+                    <h5>ivan_volkov@gmail.com</h5>
+                </div>
+            </header>
+            <div class="comment">
+                <h3>"LvivAssistHub is simply a treasure trove service! In the hustle and bustle of a big city, the eternal balancing act of 'how much is my time worth,' for me, Kabanchik is a lifesaver. 3 minutes to create an order, 1 phone call with a specialist, about an hour of his work, and everyone is happy!"</h3>
+            </div>
+        </article>
+
+        <article class="card">
+            <header class="card-header">
+                <img src="/static/petro_kovalenko.jpg" class="author-avatar" alt="Petro Kovalenko">
+                <div class="author-details">
+                    <h4>Petro Kovalenko</h4>
+                    <h4>Electrician</h4>
+                    <h5>petro_kovalenko@gmail.com</h5>
+                </div>
+            </header>
+            <div class="comment">
+                <h3>"A popular service that is convenient for both clients and professionals. The excellent selection of experts for people's everyday needs is complemented by a clear and informative interface, making 'Kabanchik' an excellent assistant. Problems are solved promptly and, most importantly, without wasting time and extra money."</h3>
+            </div>
+        </article>
+
+        <article class="card">
+            <header class="card-header">
+                <img src="/static/oksana_yarovaya.jpg" class="author-avatar" alt="Oksana Yarovaya">
+                <div class="author-details">
+                    <h4>Oksana Yarovaya</h4>
+                    <h4>Freelance Graphic Designer</h4>
+                    <h5>oksana_yarovaya@gmail.com</h5>
+                </div>
+            </header>
+            <div class="comment">
+                <h3>"LvivAssistHub has given me the opportunity to quickly find clients - I simply receive notifications of new orders. It has allowed me to earn more than I received working in the office. It has brought new clients - the most interesting entrepreneurs. By completing their tasks, I develop as a professional."
+            </div>
+        </article>
+        
+        <article class="card">
+            <header class="card-header">
+                <img src="/static/anna_shevchenko.jpg" class="author-avatar" alt="Anna Shevchenko">
+                <div class="author-details">
+                    <h4>Anna Shevchenko</h4>
+                    <h4>Plumber</h4>
+                    <h5>anna_shevchenko@gmail.com</h5>
+                </div>
+            </header>
+            <div class="comment">
+                <h3>"Very satisfied with the resource. Used it several times: looked for a wallpaper installer, a nanny for the child, and a seamstress. Satisfied. There was even no fear of sending a sewing order to another city, as thorough verification of specialists minimized risks."
+                </div>
+        </article>
+
+        <article class="card">
+            <header class="card-header">
+                <img src="/static/olena_kovalchuk.jpg" class="author-avatar" alt="Olena Kovalchuk">
+                <div class="author-details">
+                    <h4>Olena Kovalchuk</h4>
+                    <h4>Baker</h4>
+                    <h5>olena_kovalchuk@gmail.com</h5>
+                </div>
+            </header>
+            <div class="comment">
+                <h3>"LvivAssistHub is a reliable service where you can find quality and delicious products. I recommend it to everyone who appreciates tasty and fresh baked goods!"</h3>
+            </div>
+        </article>
+        </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const lightBulb = document.querySelector('.light-bulb');
+                const lightToggle = document.getElementById('light-toggle');
+                const body = document.body;
+                const savedState = localStorage.getItem('lightState');
+
+                if (savedState === 'on') {
+                    lightToggle.checked = true;
+                    lightBulb.classList.add('light-on');
+                    body.style.backgroundImage = "url('/static/background5_dark.png')";
+                } else {
+                    lightToggle.checked = false;
+                    lightBulb.classList.remove('light-on');
+                    body.style.backgroundImage = "url('/static/background5.png')";
+                }
+                
+                lightToggle.addEventListener('change', function() {
+                    if (this.checked) {
+                        lightBulb.classList.add('light-on');
+                        body.style.backgroundImage = "url('/static/background5_dark.png')";
+                        localStorage.setItem('lightState', 'on');
+                    } else {
+                        lightBulb.classList.remove('light-on');
+                        body.style.backgroundImage = "url('/static/background5.png')";
+                        localStorage.setItem('lightState', 'off');
+                    }
+                });
+            });
+        </script>
+</body>
+<div class="email-icon" id="emailButton">
+    <img src="{{ url_for('static', filename='email_icon.webp') }}" alt="Email Developers" class="email-icon" id="emailButton";>
+</div>
+
+<div id="emailFormModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Contact Developers</h2>
+        <form id="emailForm">
+            <input type="hidden" id="senderEmail" name="senderEmail" value="{{ current_user.email }}">
+            <label for="subject">Subject:</label><br>
+            <input type="text" id="subject" name="subject" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+            <input id='email_button' type="submit" value="Send">
+        </form>
+    </div>
+</div>
+<script>
+    var modal = document.getElementById('emailFormModal');
+    var emailIcon = document.getElementById('emailButton');
+    var senderEmailInput = document.getElementById('senderEmail');
+    var span = document.getElementsByClassName('close')[0];
+
+    emailIcon.onclick = function() {
+        senderEmailInput.value = "{{ current_user.email }}";
+    }
+
+    span.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    document.getElementById('emailButton').addEventListener('click', function() {
+            var recipientEmail = 'lvivassisthub@gmail.com';
+            var subject = 'Feedback/Inquiry from Website';
+            var body = 'Dear Developers,\n\nI would like to provide the following feedback:\n\n';
+            var mailtoLink = 'mailto:' + recipientEmail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            window.location.href = mailtoLink;
+        });
+
+</script>
+</body>
+</html>

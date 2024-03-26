@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='search_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='light_other.css') }}">
+</head>
+<body>
+<main>
+  <div class="button-container">
+      <input class="l" type="checkbox" id="light-toggle">
+      <label for="light-toggle"></label>
+      <div class="light-bulb"></div>
+  </div>
+</main>
+<h1>Choose hashtag for search</h1>
+<div class="overlay"></div>
+<a href="/" class="button1">LvivAssistHub</a>
+   
+<form action="/get_companies" method="GET" id="companiesForm">
+    <input type="hidden" id="hashtagInput" name="hashtag">
+    <button type="button" value="VentilationCleaners" class="button" style="top: 27vh; left: 10%;">Ventilation</button>
+    <button type="button" value="PlumbingTechnicians" class="button" style="top: 27vh; left: 40%;">Plumb</button>
+    <button type="button" value="FurnitureRepair" class="button" style="top: 27vh; left: 70%;">Furniture</button>
+    <button type="button" value="SecuritySystem" class="button" style="top: 42vh; left: 50%;">Security system</button>
+    <button type="button" value="Electricians" class="button" style="top: 42vh; left: 25%;">Electricians</button>
+    <button type="button" value="WindowDoorReplacement" class="button" style="top: 57vh; left: 10%;">Window and door</button>
+    <button type="button" value="Landscape" class="button" style="top: 57vh; left: 40%;">Landscape</button>
+    <button type="button" value="HeatingSystem" class="button" style="top: 57vh; left: 70%;">Heating system</button>
+    <button type="button" value="Cleaning" class="button" style="top: 72vh; left: 25%;">Cleaning</button>
+    <button type="button" value="RoofRepair" class="button" style="top: 72vh; left: 50%;">Roof repair</button>
+    <div class="dropdown">
+      <input id="dropInput" class='dropbtn' placeholder = 'Other' list="dropdown-options">
+      <datalist id="dropdown-options">
+        {% for hashtag in hashtags %}
+              <option>{{ hashtag[0].upper() + hashtag[1:] }}</option>
+        {% endfor %}
+      </datalist>
+    </div>
+</form>
+{{ alert_script | safe }}
+
+<div style="height: 16vh; overflow-y: scroll;">
+</div>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $('#dropInput').on('change', function() {
+      var inputValue = $(this).val();
+      $("#hashtagInput").val(inputValue);
+      $("#companiesForm").submit();
+    });
+
+    $(".button").click(function(){
+      var hashtagValue = $(this).val();
+      $("#hashtagInput").val(hashtagValue);
+      $("#companiesForm").submit();
+    });
+  });
+</script>
+</body>
+<script>
+  const lightBulb = document.querySelector('.light-bulb');
+  const lightToggle = document.getElementById('light-toggle');
+  const body = document.body;
+  const logoutButton = document.querySelector('.logout-button');
+  const savedState = localStorage.getItem('lightState');
+
+  
+  lightToggle.checked = savedState === 'on';
+  if (lightToggle.checked) {
+      body.style.background = "url('/static/search_dark.png')";
+  }
+  lightToggle.addEventListener('change', function() {
+      localStorage.setItem('lightState', this.checked ? 'on' : 'off');
+      if (this.checked) {
+          lightBulb.classList.add('light-on');
+          body.style.background = "url('/static/search_dark.png')";
+      } else {
+          lightBulb.classList.remove('light-on');
+          body.style.backgroundImage = "url('/static/search.png')";
+      }
+  });
+</script>
+</html>

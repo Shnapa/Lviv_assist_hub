@@ -1,0 +1,161 @@
+body {
+    margin: 10vh;
+    padding: 15vh;
+    background-image: url('post.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12vh; 
+    background-color: rgba(255, 255, 255, 0.575); 
+    z-index: -1;
+
+}
+.button4 {
+    position: absolute;
+    top: 4vh; 
+    left: 2vw;
+    padding: 1vh 2vw;
+    color: white;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 2vh;
+    font-weight: 100;
+    font-family: Arial, sans-serif; 
+}
+.logout-button {
+    position: absolute;
+    top: 4vh; /* Відступ від верхнього краю */
+    right: 5vw; /* Відступ від лівого краю */
+    padding: 1vh 4vw;
+    color: rgb(156, 155, 159); /* Колір тексту */
+    text-decoration: none; /* Забрати підкреслення */
+    border: 0.2vh solid white; /* Біла окантовка */
+    border-radius: 1vw; /* Мʼякі кути */
+    background-color: rgba(255, 255, 255, 0.2); /* Прозорий фон */
+    cursor: pointer;
+    font-size: 2vh; /* Розмір шрифту */ /* Жирний шрифт */
+    font-family: Arial, sans-serif; /* Сімейство шрифтів */
+}
+.center {
+    background-color: rgba(255, 255, 255, 0.51);
+    padding: 2vh;
+    border-radius: 1vw;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.205); /* М'які краї */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 40vw; /* Максимальна ширина блоку */
+    margin: 0 auto; /* Центруємо блок по горизонталі */
+    padding: 2vh;
+    height: 50vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4vh;
+    margin-bottom: 2vw;
+    color: rgba(51, 49, 49, 0.504);
+    font-family: Arial, sans-serif;
+}
+
+.employee-info {
+    margin-bottom: 2vw;
+}
+
+label {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: rgb(51, 49, 49);
+
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown input {
+    width: 100%;
+    padding: 0.5vh;
+    border-radius: o.5vh;
+    border: 0.1vw solid #ccc;
+}
+
+.dropdown datalist {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 0.5vw;
+    border: 0.1vw solid #ccc;
+    z-index: 1;
+    max-height: 15vh;
+    overflow-y: auto;
+}
+button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    padding: 2vh 3vw;
+    background-color: transparent;
+    color: black;
+    border: 0.2vh solid white;
+    border-radius: 1vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Arial, sans-serif;
+    color: rgba(51, 49, 49, 0.647);
+    font-size: 2vh;
+
+}
+
+button[type="submit"]:hover {
+    background-color: white;
+    color: rgb(77, 77, 77);
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 1vh;
+    margin-bottom: 2vh;
+    border: 0.2vh solid #ccc;
+    border-radius: 0.5vh;
+    box-sizing: border-box; /* Робить відступи і рамки враховуючи ширину і висоту елемента */
+    font-size: 2vh;
+}
+
+/* Змінити вигляд курсора в полях вводу */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #007bff; /* Змінити колір рамки при фокусі */
+    outline: none; /* Видалити контур при фокусі */
+}
+
+
+.bottom-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: rgba(118, 117, 117, 0.821);
+    z-index: -1; /* Змінили z-index */
+}
+.logout-button:hover {
+    background-color: rgba(251, 251, 251, 0.691);
+}
