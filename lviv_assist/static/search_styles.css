@@ -21,6 +21,16 @@ h1 {
     position: absolute;
     font-family: Arial, sans-serif;
   }
+  
+  .button:hover {
+    background-color: #f0ebeb90; /* Change this to the desired color */
+    /* You can also add other styles for the hover state if needed */
+}
+  .button:active {
+    background-color:  #f0ebeb90; /* Change this to the desired color */
+    /* You can also add other styles for the active state if needed */
+}
+
 
   .input {
     color: #fff;
