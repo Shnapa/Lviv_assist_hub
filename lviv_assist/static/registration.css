@@ -5,9 +5,9 @@ body {
     background-image: url("registration.png");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 50vh; /* Зменшена висота сторінки */
+    height: 50vh; 
     margin-top: 5rem;
-    overflow: hidden; /* Вимкнення прокрутки сторінки */
+    overflow: hidden; 
 }
   
 
@@ -21,11 +21,11 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Set a fixed height for the background container */
-    overflow-y: hidden; /* Enable vertical scrolling for the background container */
+    height: 100vh;
+    overflow-y: hidden; 
     position: fixed;
-    width: 100%; /* Take the full width of the viewport */
-    z-index: -1; /* Send the background container to the back */
+    width: 100%; 
+    z-index: -1; 
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -47,11 +47,10 @@ body {
   .site-header .navbar-nav .nav-link.active {
     font-weight: 100;
   }
-  /* registration-style.css */
 
     .container {
-        max-width: 800px; /* Adjust the max-width as needed to make the frame wider */
-        margin: 10px; /* Adjust the margin for the top and bottom, and set auto for left and right */
+        max-width: 800px;
+        margin: 10px;
         padding: 20px;
     }
 
@@ -69,17 +68,17 @@ body {
     }
 
     .btn-register {
-        background-color: #6d8183; /* Bootstrap's primary color */
+        background-color: #6d8183;
         color: #ffffff;
         font-weight: bold;
     }
 
     .btn-register:hover {
-        background-color: #5f5e5e; /* Darker shade on hover */
+        background-color: #5f5e5e;
     }
 
     .btn-outline-info {
-        background-color: white; /* Specify your desired color code */
+        background-color: white;
         color: #ffffff;
     }
 
@@ -94,7 +93,7 @@ body {
         width: 100%;
         height: 10%;
         background-color: rgba(118, 117, 117, 0.821);
-        z-index: -1; /* Змінили z-index */
+        z-index: -1;
     }
     .transparent-rectangle {
         background-color: transparent;
@@ -104,30 +103,28 @@ body {
         transition: background-color 0.3s;
     }
     
-    /* Стилі для зміни фону кнопки при наведенні */
     .transparent-rectangle:hover {
         background-color: rgba(255, 255, 255, 0.662);
-        color: #333; /* змініть колір тексту на потрібний */
+        color: #333;
     }
 
 
     .text-link {
-        color:rgb(63, 53, 53); /* синій колір, який буде застосований до посилань */
+        color:rgb(63, 53, 53);
         transition: color 0.3s;
     }
     
     .text-link:hover {
-        color: rgb(244, 241, 241); /* змінений колір тексту при наведенні */
+        color: rgb(244, 241, 241);
     }
 
 
-/* Стилі для зміни коліру тексту кнопки "Log In" */
 .custom-text-color {
-    color: rgb(63, 53, 53) !important; /* білий колір тексту */
+    color: rgb(63, 53, 53) !important;
     transition: color 0.3s;
 }
 .custom-text-color:hover {
-    color: #fff !important; /* змінений колір тексту при наведенні на білий */
+    color: #fff !important;
 }
 .bottom-overlay {
     position: fixed;
@@ -136,18 +133,18 @@ body {
     width: 100%;
     height: 10%;
     background-color: rgba(118, 117, 117, 0.821);
-    z-index: 1; /* Змінили z-index */
+    z-index: 1;
 }
 
 .text-muted a {
-    color: white !important; /* колір тексту білий */
-    text-decoration: none !important; /* відключення підкреслення */
+    color: white !important;
+    text-decoration: none !important;
     z-index: 999;
 }
 
 .text-muted a:hover {
-    color: white !important; /* колір тексту білий при наведенні */
-    text-decoration: none !important; /* відключення підкреслення при наведенні */
+    color: white !important;
+    text-decoration: none !important;
 }
 
 .custom-color {
@@ -156,11 +153,11 @@ body {
 }
 
 .custom-color a {
-    color: white !important; /* колір тексту білий */
+    color: white !important;
 }
 
 .custom-color a:hover {
-    color: rgb(63, 53, 53)!important; /* колір тексту чорний при наведенні */
+    color: rgb(63, 53, 53)!important;
 }
 
 

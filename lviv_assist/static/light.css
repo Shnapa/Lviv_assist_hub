@@ -1,9 +1,9 @@
 .button-container {
-	position: fixed; /* This makes the container fixed relative to the viewport */
-	top: 10px; /* Position the container at the top */
-	left: 3%; /* Position the container horizontally at the center */
-	transform: translateX(-50%); /* Adjust to center the container */
-	z-index: 9999; /* Set a high z-index to ensure it's on top of other elements */
+	position: fixed;
+	top: 10px;
+	left: 3%;
+	transform: translateX(-50%);
+	z-index: 9999; 
 }
 .l {
 	background-color: rgba(0,0,0,0.7);

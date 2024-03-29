@@ -53,12 +53,11 @@
     border-left-color: currentColor;
     transform: translateX(-2.5%) rotateY(180deg);
 }
-/* Other States */
+
 .l:focus {
-    /* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
     outline: 0;
 }
-/* Light bulb */
+
 .light-bulb {
     width: 0px;
     height: 0px;
@@ -69,7 +68,7 @@
     z-index: 9999 !important;
 }
 .light-on .light-bulb {
-    background-color: #ffeb3b; /* Changed color when light is on */
+    background-color: #ffeb3b;
 }
 .contact-bar {
 position: absolute;

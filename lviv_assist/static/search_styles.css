@@ -115,16 +115,15 @@ h1 {
 .logout-button:active {
     outline: none;
     text-decoration: none;
-    background-color: #ffffff; /* Change this to the desired color */
-    /* You can also add other styles for the hover and active states if needed */
+    background-color: #ffffff;
     color: rgb(156, 155, 159);
 }
 .button1:hover,
 .button1:active {
-    outline: none; /* Видаляє лінію підсвітки */
-    text-decoration: none; /* Видаляє підкреслення при наведенні */
-    background-color: transparent; /* Зберігає фон прозорим */
-    color: white; /* Зберігає колір тексту */
+    outline: none; 
+    text-decoration: none; 
+    background-color: transparent;
+    color: white; 
 }
 
 
@@ -136,5 +135,5 @@ h1 {
     width: 100%;
     height: 10%;
     background-color: rgba(118, 117, 117, 0.821);
-    z-index: -1; /* Змінили z-index */
+    z-index: -1; 
 }
