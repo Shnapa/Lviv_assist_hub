@@ -340,5 +340,19 @@ class ResettingPassword:
             return redirect(url_for('login'))
         return render_template('reset_token.html', title='Reset Password', form=form)
 
+class Error:
+    """
+    Error handler
+    """
+    @app.errorhandler(Exception)
+    @staticmethod
+    def handle_exception(error):
+        """
+        Error Handler
+        """
+        print(f"An error occurred: {str(error)}")
+        return render_template('error.html')
+
+
 if __name__=='__main__':
     LvivAssist.run(app.run(debug=True))
