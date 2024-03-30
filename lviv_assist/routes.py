@@ -89,7 +89,6 @@ class UserAuthentication:
         return render_template('login.html', title='Log in', form=form)
 
 
-
 class UserRegistration:
     """
     Class for user registration related operations.
@@ -102,17 +101,21 @@ class UserRegistration:
         Registers a new user.
         """
         if current_user.is_authenticated:
-            return redirect(url_for('post'))
+            return redirect(url_for('account'))
         form = RegistrationForm()
+        existing_user = User.query.filter_by(email=form.email.data).first()
+        if existing_user:
+            flash('Email address is already in use. Please use a different one.', 'danger')
+            return redirect(url_for('register'))
         if form.validate_on_submit():
             hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-            user = User(name=form.name.data, \
-surname=form.surname.data, email=form.email.data, password=hashed_password)
+            user = User(name=form.name.data, surname=form.surname.data, email=form.email.data, password=hashed_password)
             db.session.add(user)
             db.session.commit()
             flash('Your account has been created! You are now able to log in', 'success')
             return redirect(url_for('login'))
         return render_template('register.html', title='Register', form=form)
+
 
 class Picture:
     """
@@ -280,7 +283,6 @@ class Profile:
         description = request.args.get('description')
         employee = ShowEmployees.get_employee(email=email, description=description)
         image_file = User.query.filter_by(email=email).first().image_file
-        print("Image file:", image_file)
         email_to = employee.email
         if current_user.is_authenticated and request.method == 'POST':
             name_from = current_user.name
