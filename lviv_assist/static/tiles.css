@@ -12,6 +12,6 @@ body {
     margin: 10px;
     background-color: rgba(148, 147, 147, 0);
     border-radius: 10px;
-    color: white; /* Set text color to white */
-    border: 1px solid white; /* Set border color to white */
+    color: white;
+    border: 1px solid white;
 }
