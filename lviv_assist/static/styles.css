@@ -26,7 +26,7 @@ body {
 .logout-button {
     position: absolute;
     top: 40px; /* Відступ від верхнього краю */
-    right: 80px; /* Відступ від лівого краю */
+    right: 140px; /* Відступ від лівого краю */
     padding: 10px 40px;
     color: rgb(156, 155, 159); /* Колір тексту */
     text-decoration: none; /* Забрати підкреслення */
@@ -56,6 +56,28 @@ body {
 }
 .logout-button1:hover {
     background-color: rgba(251, 251, 251, 0.691);
+
+}
+
+.logout-button2 {
+
+    left: 75px; /* Відступ від лівого краю */
+    top: 20px; 
+    position: absolute;
+    padding: 20px 100px;
+    color: white; /* Колір тексту */
+    text-decoration: none; /* Забрати підкреслення */
+    border: 2px solid white; /* Біла окантовка */
+    border-radius: 20px; /* Мʼякі кути */
+    background-color: rgba(255, 255, 255, 0.2); /* Прозорий фон */
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 100;
+    font-family: Arial, sans-serif; /* Сімейство шрифтів */
+}
+.logout-button2:hover {
+    background-color: rgba(251, 251, 251, 0.691);
+
 }
   h1 {
     color: #f4f4f4;
@@ -174,4 +196,93 @@ body{
 .author-details h4,
 .author-details h5 {
     font-family: Arial, sans-serif;
+}
+@media screen and (max-width: 768px) {
+    /* Додайте ваші адаптивні стилі тут */
+    body {
+        padding-top: 90px; /* Налаштуйте за потребою */
+        height: 40vh;
+        overflow-y: auto;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 130%;
+        height: 115px; 
+        background-color: rgba(255, 255, 255, 0.5); 
+    }
+    .button4 {
+        position: absolute;
+        top: 40px; 
+        left: 0%;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 10px;
+        font-weight: 100;
+        font-family: Arial, sans-serif; 
+    }
+    .logout-button {
+        position: absolute;
+        top: 40px; /* Відступ від верхнього краю */
+        right: 28%; /* Відступ від лівого краю */
+        padding: 5px 20px;
+        color: rgb(156, 155, 159); /* Колір тексту */
+        text-decoration: none; /* Забрати підкреслення */
+        border: 2px solid white; /* Біла окантовка */
+        border-radius: 10px; /* Мʼякі кути */
+        background-color: rgba(255, 255, 255, 0.2); /* Прозорий фон */
+        cursor: pointer;
+        font-size: 15px; /* Розмір шрифту */ /* Жирний шрифт */
+        font-family: Arial, sans-serif; /* Сімейство шрифтів */
+    }
+    .logout-button1 {
+        position: absolute;
+        top: 45px; /* Відступ від верхнього краю */
+        left:100%; /* Відступ від лівого краю */
+        padding: 5px 20px;
+        color: rgb(156, 155, 159); /* Колір тексту */
+        text-decoration: none; /* Забрати підкреслення */
+        border: 2px solid white; /* Біла окантовка */
+        border-radius: 10px; /* Мʼякі кути */
+        background-color: rgba(255, 255, 255, 0.2); /* Прозорий фон */
+        cursor: pointer;
+        font-size: 15px; /* Розмір шрифту */ /* Жирний шрифт */
+        font-family: Arial, sans-serif; /* Сімейство шрифтів */
+    }
+    .title {
+        font-size: 50px;
+        color: white;
+        font-weight: normal;
+        position: absolute;
+        left: 2%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-family: Arial, sans-serif;
+    }
+    .card-list{
+        display: none;
+        
+    }
+
+    .logout-button2 {
+        left: 2% !important;
+        top: 40%; 
+        position: absolute;
+        padding: 20px 100px;
+        color: white; /* Колір тексту */
+        text-decoration: none; /* Забрати підкреслення */
+        border: 2px solid white; /* Біла окантовка */
+        border-radius: 20px; /* Мʼякі кути */
+        background-color: rgba(255, 255, 255, 0.2); /* Прозорий фон */
+        cursor: pointer;
+        font-size: 25px;
+        font-weight: 100;
+        font-family: Arial, sans-serif; /* Сімейство шрифтів */
+    }
+
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='light_other.css') }}">
     <style>
         .title {
-    font-size: 14vh;
+    font-size: 120px;
     color: white;
     font-weight: normal;
     position: absolute;
@@ -25,7 +25,14 @@
     height: 1300px;
     overflow-y: scroll;
 }
-
+.section1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 1300px;
+    overflow-y: scroll;
+}
 .section:first-child {
 height: 97vh;
 overflow-y: hidden;
@@ -119,7 +126,7 @@ p {
             width: 80%;
         }
 
-        /* Styles for close button */
+
         .close {
             color: #aaa;
             float: right;
@@ -133,6 +140,23 @@ p {
             text-decoration: none;
             cursor: pointer;
         }
+
+    @media screen and (max-width: 768px) {
+        .title {
+        font-size: 50px;
+        color: white;
+        font-weight: normal;
+        position: absolute;
+        left: 40%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-family: Arial, sans-serif;
+    }
+    .section1 {
+        display:none !important;
+    }
+
+}
     </style>
 
 </head>
@@ -146,14 +170,14 @@ p {
         <div class="overlay"></div>
         <a class="button4" style="font-size: 25px;">LvivAssistHub</a>
         {% if current_user.is_authenticated %}
-        <a href="{{ url_for('account') }}" class="logout-button" style="right: 140px;padding: 10px 20px;">Account</a>
+        <a href="{{ url_for('account') }}" class="logout-button" style="padding: 10px 20px;">Account</a>
         <a href="{{ url_for('logout') }}" class="logout-button" style="right: 15px; padding: 10px 20px;">Log out</a>
         {% else %}
             <a href="{{ url_for('register') }}" class="logout-button" style="right: 120px;padding: 10px 20px;">Sign Up</a>
             <a href="{{ url_for('login') }}" class="logout-button" style="right: 15px; padding: 10px 20px;">Log In</a>
         {% endif %}
         <a href="{{ url_for('employee_search') }}" class="logout-button1">Search</a>
-        <a href="{{ url_for('employee_search') }}" class="logout-button1" style="left: 75px; margin-top: 39%; padding: 10px 40px;
+        <a href="{{ url_for('employee_search') }}" class="logout-button2" style="left: 75px; margin-top: 39%; padding: 10px 40px;
         color: white;font-size: 15px;padding: 20px 100px;position: absolute;
         border: 2px solid white;
         border-radius: 20px;
@@ -164,7 +188,7 @@ p {
         </div>
     </div>
 
-    <div class="section" style="background-color: #A09393; width: 100vw; display: flex; flex-direction: column; justify-content: flex-end; position: absolute;">        
+    <div class="section1" style="background-color: #A09393; width: 100vw; display: flex; flex-direction: column; justify-content: flex-end; position: absolute;">        
         <div style="flex: 1;"></div>
         <img src="/static/lviv1.JPG"  style="width: 700px; height: 300px;top: 70px ;position: absolute; left: 9%;border: 2px solid white;border-radius: 10px">
         <div style="position: absolute; top: 70px; left: 51%; width: 700px; height: 300px; background-color: rgba(255, 255, 255, 0.4); border-radius: 10px; border: 2px solid white;"></div>

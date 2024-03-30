@@ -27,35 +27,35 @@ body {
     border: none;
     background: none;
     cursor: pointer;
-    font-size: 2vh;
+    font-size: 3vh;
     font-weight: 100;
     font-family: Arial, sans-serif; 
 }
 .logout-button {
     position: absolute;
-    top: 4vh;
-    right: 5vw;
+    top: 4vh; /* Відступ від верхнього краю */
+    right: 5vw; /* Відступ від лівого краю */
     padding: 1vh 4vw;
-    color: rgb(156, 155, 159);
-    text-decoration: none;
-    border: 0.2vh solid white;
-    border-radius: 1vw;
-    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(156, 155, 159); /* Колір тексту */
+    text-decoration: none; /* Забрати підкреслення */
+    border: 0.2vh solid white; /* Біла окантовка */
+    border-radius: 1vw; /* Мʼякі кути */
+    background-color: rgba(255, 255, 255, 0.2); /* Прозорий фон */
     cursor: pointer;
-    font-size: 2vh;
-    font-family: Arial, sans-serif;
+    font-size: 2vh; /* Розмір шрифту */ /* Жирний шрифт */
+    font-family: Arial, sans-serif; /* Сімейство шрифтів */
 }
 .center {
     background-color: rgba(255, 255, 255, 0.51);
     padding: 2vh;
     border-radius: 1vw;
-    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.205);
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.205); /* М'які краї */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-width: 40vw;
-    margin: 0 auto;
+    max-width: 40vw; /* Максимальна ширина блоку */
+    margin: 0 auto; /* Центруємо блок по горизонталі */
     padding: 2vh;
     height: 50vh;
 }
@@ -69,6 +69,7 @@ h1 {
 }
 
 .employee-info {
+
     margin-bottom: 2vw;
 }
 
@@ -132,18 +133,18 @@ textarea {
     margin-bottom: 2vh;
     border: 0.2vh solid #ccc;
     border-radius: 0.5vh;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Робить відступи і рамки враховуючи ширину і висоту елемента */
     font-size: 2vh;
 }
 
-
+/* Змінити вигляд курсора в полях вводу */
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="number"]:focus,
 textarea:focus {
-    border-color: #007bff;
-    outline: none;
+    border-color: #007bff; /* Змінити колір рамки при фокусі */
+    outline: none; /* Видалити контур при фокусі */
 }
 
 
@@ -154,8 +155,60 @@ textarea:focus {
     width: 100%;
     height: 10%;
     background-color: rgba(118, 117, 117, 0.821);
-    z-index: -1;
+    z-index: -1; /* Змінили z-index */
 }
 .logout-button:hover {
     background-color: rgba(251, 251, 251, 0.691);
+}
+
+@media screen and (max-width: 768px) {
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 12vh; 
+        background-color: rgba(255, 255, 255, 0.575); 
+        z-index: -1;
+    
+    }
+    body {
+        margin: 10vh;
+        padding: 15vh;
+        background-image: url('post.png');
+        background-size: cover;
+
+        background-attachment: fixed;
+        overflow: hidden;
+    }
+    .center {
+        background-color: rgba(255, 255, 255, 0);
+        padding: 2vh;
+        border-radius: 1vw;
+        box-shadow: 0 0 1vw rgba(0, 0, 0, 0); /* М'які краї */
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        flex-direction: column;
+        max-width: 40vw; /* Максимальна ширина блоку */
+        /* margin: 0 auto; */ /* Центруємо блок по горизонталі */
+        padding: 2vh;
+        height: 50vh;
+        
+    }
+    .button4 {
+        position: fixed;
+        top: 4vh; 
+        left: 2vw;
+        padding: 1vh 2vw;
+        color: white;
+        text-decoration: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: 100;
+        font-family: Arial, sans-serif; 
+    }
+    
 }

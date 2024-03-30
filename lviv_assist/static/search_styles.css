@@ -21,16 +21,6 @@ h1 {
     position: absolute;
     font-family: Arial, sans-serif;
   }
-  
-  .button:hover {
-    background-color: #f0ebeb90; /* Change this to the desired color */
-    /* You can also add other styles for the hover state if needed */
-}
-  .button:active {
-    background-color:  #f0ebeb90; /* Change this to the desired color */
-    /* You can also add other styles for the active state if needed */
-}
-
 
   .input {
     color: #fff;
@@ -125,15 +115,16 @@ h1 {
 .logout-button:active {
     outline: none;
     text-decoration: none;
-    background-color: #ffffff;
+    background-color: #ffffff; /* Change this to the desired color */
+    /* You can also add other styles for the hover and active states if needed */
     color: rgb(156, 155, 159);
 }
 .button1:hover,
 .button1:active {
-    outline: none; 
-    text-decoration: none; 
-    background-color: transparent;
-    color: white; 
+    outline: none; /* Видаляє лінію підсвітки */
+    text-decoration: none; /* Видаляє підкреслення при наведенні */
+    background-color: transparent; /* Зберігає фон прозорим */
+    color: white; /* Зберігає колір тексту */
 }
 
 
@@ -145,5 +136,27 @@ h1 {
     width: 100%;
     height: 10%;
     background-color: rgba(118, 117, 117, 0.821);
-    z-index: -1; 
+    z-index: -1; /* Змінили z-index */
+}
+
+@media screen and (max-width: 768px) {
+    .button {
+        font-size: 1.5vh;
+        display: inline-block;
+        width: 20vw;
+        height: 10vh;
+        color: #fff;
+        background-color: #ffffff00;
+        border: 0.3vh solid rgb(244, 244, 244);
+        border-radius: 4vh;
+        margin: 0.4vh;
+        position: absolute;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        color: #f4f4f4;
+        text-align: center;
+        margin-top: 90px!important;
+        font-size: 4vh;
+      }   
 }

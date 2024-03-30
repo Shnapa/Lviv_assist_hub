@@ -75,3 +75,66 @@ body {
 .logout-button:active {
     background-color: #ffffff;
 }
+.logout-button1 {
+    position: absolute;
+    top: 6%;
+    right: 220px;
+    padding: 10px 40px;
+    color: rgb(156, 155, 159);
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+.logout-button1:hover,
+.logout-button1:active {
+    background-color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+    .button {
+        position: absolute;
+        top: 7.5%;
+        left: 3%;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 23px;
+        font-weight: 100;
+        font-family: Arial, sans-serif;
+    }
+    .logout-button {
+        position: absolute;
+        top: 8%;
+        right: 2%;
+        padding: 5px 20px;
+        color: rgb(156, 155, 159);
+        text-decoration: none;
+        border: 2px solid white;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        font-size: 15px;
+        font-family: Arial, sans-serif;
+    }
+    .logout-button1 {
+        position: absolute;
+        top: 8%;
+        right: 27%;
+        padding: 5px 20px;
+        color: rgb(156, 155, 159);
+        text-decoration: none;
+        border: 2px solid white;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        font-size: 15px;
+        font-family: Arial, sans-serif;
+    }
+}

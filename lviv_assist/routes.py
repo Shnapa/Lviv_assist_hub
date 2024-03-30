@@ -287,12 +287,27 @@ class Profile:
             name_to = request.form.get('name_to')
             surname_to = request.form.get('surname_to')
             body = request.form.get('body')
+            if len(body.strip()) == 0:
+                alert_script = '''
+                <script>
+                window.onload = function() {{
+                    alert("Please, do not write an empty comment");
+                }}
+                </script>
+                '''
+                comments=GetComments.get_comments(name_from=None,
+                            email_to=email_to,
+                            description=description)
+                return render_template('profile.html', employee=employee, \
+comments=comments, image_file=os.path.join('static/profile_pics', image_file), alert_script=alert_script)
             AddComments.add_comment(name_from, name_to, surname_to, email_to, description, body)
         comments=GetComments.get_comments(name_from=None,
                             email_to=email_to,
                             description=description)
         return render_template('profile.html', employee=employee, \
 comments=comments, image_file=os.path.join('static/profile_pics', image_file))
+
+
 
 
 class ResettingPassword:
