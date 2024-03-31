@@ -7,8 +7,7 @@ import os
 import secrets
 import re
 from PIL import Image
-from flask import render_template, url_for, redirect, request, flash,request, Flask, request, jsonify, session
-from flask_session import Session
+from flask import render_template, url_for, redirect, request, flash,request, Flask, request, jsonify
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_wtf import FlaskForm
 from wtforms import TextAreaField, SubmitField
@@ -20,9 +19,7 @@ from lviv_assist.users_database import ShowEmployees, GetHashtags, Filter
 from lviv_assist.comments import GetComments, AddComments
 from flask_mail import Message, Mail
 
-SESSION_TYPE = 'filesystem'
-app.config.from_object(__name__)
-Session(app)
+
 
 class CommentForm(FlaskForm):
     """
