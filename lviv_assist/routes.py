@@ -115,7 +115,10 @@ class UserRegistration:
         if existing_user:
             flash('Email address is already in use. Please use a different one.', 'danger')
             return redirect(url_for('register'))
-        
+
+        if form.password.data != form.confirm_password.data:
+            flash('Passwords do not match.', 'danger')
+            return redirect(url_for('register'))
         if form.validate_on_submit():
             hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
             user = User(name=form.name.data, surname=form.surname.data, email=form.email.data, password=hashed_password)
