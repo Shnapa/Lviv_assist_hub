@@ -13,7 +13,6 @@ app = Flask(__name__)
 engine = create_engine('sqlite:///employee.db', echo=True)
 
 Base = declarative_base()
-Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)
 
 class Employee(Base):
