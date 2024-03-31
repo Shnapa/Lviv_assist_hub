@@ -269,7 +269,6 @@ class Posts:
         email = current_user.email
         Filter.add_hashtag_profile(name, surname, email, description, \
 price, hashtag[0].upper() + hashtag[1:])
-        flash('Your post has been created!', 'success')
         return redirect(url_for('post'))
 
     @staticmethod
