@@ -86,10 +86,6 @@ class UserAuthentication:
             user = User.query.filter_by(email=form.email.data).first()
             if user and bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user, remember=form.remember.data)
-                
-                # Store user's email in session
-                session['email'] = user.email
-                
                 return redirect(url_for('account'))
             else:
                 flash('Login Unsuccessful. Please check email and password', 'danger')
