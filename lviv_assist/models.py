@@ -1,7 +1,10 @@
 from datetime import datetime
 from itsdangerous import URLSafeTimedSerializer as Serializer
 from lviv_assist import db, login_manager, app
-from flask_login import UserMixin
+from flask_login import UserMixin, LoginManager
+
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(user_id):
