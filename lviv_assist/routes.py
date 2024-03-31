@@ -5,6 +5,7 @@ view profiles of other users, and leave comments on those profiles.
 """
 import os
 import secrets
+import re
 from PIL import Image
 from flask import render_template, url_for, redirect, request, flash,request, Flask, request, jsonify
 from flask_login import login_user, current_user, logout_user, login_required
@@ -104,8 +105,9 @@ class UserRegistration:
             return redirect(url_for('account'))
         
         form = RegistrationForm()
-
-        if form.email.data and "@" not in form.email.data:
+        pattern = r"^[a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~]{1,64}+(\.[a-zA-Z0-9!#$%&'\
+*+\-/=?^_`{|}~]+)*@[a-z]+(\.[a-z]+)*\.(com|org|edu|gov|net|ua){1,255}$"
+        if form.email.data and not bool(re.match(pattern, form.email.data)):
             flash('Invalid email address. Please provide a valid email.', 'danger')
             return redirect(url_for('register'))
 
