@@ -102,11 +102,18 @@ class UserRegistration:
         """
         if current_user.is_authenticated:
             return redirect(url_for('account'))
+        
         form = RegistrationForm()
+
+        if form.email.data and "@" not in form.email.data:
+            flash('Invalid email address. Please provide a valid email.', 'danger')
+            return redirect(url_for('register'))
+
         existing_user = User.query.filter_by(email=form.email.data).first()
         if existing_user:
             flash('Email address is already in use. Please use a different one.', 'danger')
             return redirect(url_for('register'))
+        
         if form.validate_on_submit():
             hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
             user = User(name=form.name.data, surname=form.surname.data, email=form.email.data, password=hashed_password)
@@ -114,6 +121,7 @@ class UserRegistration:
             db.session.commit()
             flash('Your account has been created! You are now able to log in', 'success')
             return redirect(url_for('login'))
+        
         return render_template('register.html', title='Register', form=form)
 
 
