@@ -170,8 +170,8 @@ p {
         <div class="overlay"></div>
         <a class="button4" style="font-size: 25px;">LvivAssistHub</a>
         {% if current_user.is_authenticated %}
-        <a href="{{ url_for('account') }}" class="logout-button" style="padding: 10px 20px;">Account</a>
-        <a href="{{ url_for('logout') }}" class="logout-button" style="right: 15px; padding: 10px 20px;">Log out</a>
+            <a href="{{ url_for('account') }}" class="logout-button" style="padding: 10px 20px;">Account</a>
+            <a href="{{ url_for('logout') }}" class="logout-button" style="right: 15px; padding: 10px 20px;">Log out</a>
         {% else %}
             <a href="{{ url_for('register') }}" class="logout-button" style="right: 120px;padding: 10px 20px;">Sign Up</a>
             <a href="{{ url_for('login') }}" class="logout-button" style="right: 15px; padding: 10px 20px;">Log In</a>

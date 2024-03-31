@@ -21,7 +21,8 @@
 
 <div class="overlay"></div>
 <a href="{{ url_for('home') }}" class="button">LvivAssistHub</a>
-<a href="{{ url_for('logout') }}" class="logout-button">Log out</a>
+{% if current_user.is_authenticated %}
+  <a href="{{ url_for('logout') }}" class="logout-button">Log out</a>
 
 
 
