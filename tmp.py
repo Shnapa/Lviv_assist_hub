@@ -1,9 +1,11 @@
 from datetime import datetime
-from flask import Flask, render_template, url_for, flash, redirect, request
+from flask import Flask, render_template, url_for, flash, redirect, request, session
+from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
 from lviv_assist.forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
+SESSION_TYPE = 'filesystem'
 
 app.config['SECRET_KEY'] = '006ff5b617a20e617f59a7eb457e60fd'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'

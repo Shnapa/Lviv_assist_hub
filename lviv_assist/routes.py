@@ -7,7 +7,8 @@ import os
 import secrets
 import re
 from PIL import Image
-from flask import render_template, url_for, redirect, request, flash,request, Flask, request, jsonify
+from flask import render_template, url_for, redirect, request, flash,request, Flask, request, jsonify, session
+from flask_session import Session
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_wtf import FlaskForm
 from wtforms import TextAreaField, SubmitField
@@ -18,6 +19,10 @@ from lviv_assist.models import User
 from lviv_assist.users_database import ShowEmployees, GetHashtags, Filter
 from lviv_assist.comments import GetComments, AddComments
 from flask_mail import Message, Mail
+
+SESSION_TYPE = 'filesystem'
+app.config.from_object(__name__)
+Session(app)
 
 class CommentForm(FlaskForm):
     """
@@ -84,10 +89,15 @@ class UserAuthentication:
             user = User.query.filter_by(email=form.email.data).first()
             if user and bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user, remember=form.remember.data)
+                
+                # Store user's email in session
+                session['email'] = user.email
+                
                 return redirect(url_for('account'))
             else:
                 flash('Login Unsuccessful. Please check email and password', 'danger')
         return render_template('login.html', title='Log in', form=form)
+
 
 
 class UserRegistration:
