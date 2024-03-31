@@ -177,48 +177,6 @@ class UserProfile:
         return render_template('account.html', title='Account',
                         image_file=image_file, form=form)
 
-class LvivAssistApp(LvivAssist, Picture):
-    """
-    Main Lviv Assist application class.
-    """
-
-    def __init__(self, app):
-        """
-        Initialize Lviv Assist application class.
-        """
-        super().__init__(app)
-        self.registration_form = RegistrationForm
-        self.login_form = LoginForm
-        self.update_account_form = UpdateAccountForm
-        self.comment_form = CommentForm
-
-    def home(self):
-        """
-        Home page route.
-        """
-        @self.app.route("/")
-        def home():
-            return render_template("home.html")
-
-    def register(self):
-        """
-        User registration route.
-        """
-        @self.app.route('/register', methods=['GET', 'POST'])
-        def register():
-            if current_user.is_authenticated:
-                return redirect(url_for('post'))
-            form = self.registration_form()
-            if form.validate_on_submit():
-                hashed_password = self.bcrypt.generate_password_hash\
-(form.password.data).decode('utf-8')
-                user = User(name=form.name.data, surname=form.surname.data, \
-email=form.email.data, password=hashed_password)
-                self.db.session.add(user)
-                self.db.session.commit()
-                flash('Your account has been created! You are now able to log in', 'success')
-                return redirect(url_for('login'))
-            return render_template('register.html', title='Register', form=form)
 
 class Search:
     """
